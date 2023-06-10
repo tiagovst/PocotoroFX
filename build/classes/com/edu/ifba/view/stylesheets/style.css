@@ -1,0 +1,36 @@
+.background-color-fundo {
+    -fx-background-color: #BDD6D2;
+}
+
+.background-color-cinza-escuro {
+    -fx-background-color: #586875;
+}
+
+.background-color-cinza-escurinho {
+    -fx-background-color: #6d8191;
+}
+
+.background-color-cinza-claro {
+    -fx-background-color: #95ACA8;
+}
+
+.background-color-cinza-clarinho {
+    -fx-background-color: #a6bfbb;
+}
+
+.background-radius-circulo {
+    -fx-background-radius: 50%;
+}
+
+.background-radius-40px {
+    -fx-background-radius: 40px;
+}
+
+.background-radius-10px {
+    -fx-background-radius: 10px;
+}
+
+/*.fonte-lato {
+    -fx-font-family: "Lato";
+}*/
+

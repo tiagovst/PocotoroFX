@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="768.0" prefWidth="1366.0" styleClass="background-color-fundo" stylesheets="@stylesheets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="655.0" minWidth="346.0" prefHeight="768.0" prefWidth="1366.0" styleClass="background-color-fundo" stylesheets="@stylesheets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <center>
       <VBox BorderPane.alignment="CENTER">
          <children>
@@ -159,7 +159,7 @@
       </ImageView>
    </left>
    <bottom>
-      <Label alignment="CENTER" contentDisplay="RIGHT" text="Pocotoro" textFill="#586875" BorderPane.alignment="CENTER">
+      <Label alignment="CENTER" contentDisplay="RIGHT" text="Pocotoro" textFill="WHITE" BorderPane.alignment="CENTER">
          <font>
             <Font name="System Bold" size="27.0" />
          </font>
