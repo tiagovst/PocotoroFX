@@ -62,7 +62,7 @@
                            <children>
                               <Pane maxHeight="68.0" maxWidth="168.0" minHeight="68.0" minWidth="168.0" prefHeight="68.0" prefWidth="168.0" stylesheets="@stylesheets/style.css">
                                  <children>
-                                    <Button contentDisplay="CENTER" layoutX="12.0" layoutY="12.0" maxHeight="45.0" maxWidth="145.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="145.0" stylesheets="@stylesheets/style.css" text="PARAR" textFill="WHITE">
+                                    <Button contentDisplay="CENTER" layoutX="12.0" layoutY="12.0" maxHeight="45.0" maxWidth="145.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="145.0" stylesheets="@stylesheets/style.css" text="REINICIAR" textFill="WHITE">
                                        <styleClass>
                                           <String fx:value="background-color-cinza-claro" />
                                           <String fx:value="background-radius-10px" />
