@@ -23,7 +23,10 @@
                   <String fx:value="background-radius-40px" />
                </styleClass>
                <children>
-                  <Button layoutX="33.0" layoutY="272.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Esqueci a senha" textFill="#419ef5" />
+                  <Button layoutX="33.0" layoutY="272.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Esqueci a senha" textFill="#419ef5">
+                     <font>
+                        <Font size="20.0" />
+                     </font></Button>
                   <Label alignment="TOP_LEFT" layoutX="33.0" layoutY="86.0" text="Email:" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
