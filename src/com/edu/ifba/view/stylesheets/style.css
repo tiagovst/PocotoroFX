@@ -30,6 +30,10 @@
     -fx-background-radius: 10px;
 }
 
+.button-background-color {
+    -fx-background-color: #7f99bb;
+}
+
 /*.fonte-lato {
     -fx-font-family: "Lato";
 }*/
