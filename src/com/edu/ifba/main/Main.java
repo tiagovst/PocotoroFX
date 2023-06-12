@@ -21,6 +21,9 @@ public class Main extends Application {
         //Font.loadFont(getClass().getResourceAsStream("/com/edu/ifba/view/fonts/Lato-Regular.ttf"), 20);
         Scene scene = new Scene(root);
         stage.setScene(scene);
+        stage.setTitle("Pocotoro");
+        stage.setResizable(false);
+        stage.centerOnScreen();
         stage.show();
     }
 

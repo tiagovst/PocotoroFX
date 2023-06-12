@@ -15,9 +15,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="960.0" prefHeight="768.0" prefWidth="1366.0" styleClass="background-color-fundo" stylesheets="@stylesheets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="960.0" prefHeight="768.0" prefWidth="1366.0" styleClass="background-color-fundo" stylesheets="@stylesheets/style.css" type="BorderPane" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.edu.ifba.controller.TimerController">
    <center>
-      <VBox BorderPane.alignment="CENTER">
+      <VBox BorderPane.alignment="CENTER" >
          <children>
             <HBox alignment="CENTER">
                <children>
@@ -29,7 +29,7 @@
                      <children>
                         <HBox alignment="CENTER" layoutX="17.0" layoutY="17.0" prefHeight="240.0" prefWidth="540.0" stylesheets="@stylesheets/style.css">
                            <children>
-                              <Label stylesheets="@stylesheets/style.css" text="00" textFill="WHITE">
+                              <Label fx:id="jLabelMinutes" stylesheets="@stylesheets/style.css" text="00" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="140.0" />
                                  </font>
@@ -39,7 +39,7 @@
                                     <Font name="System Bold" size="140.0" />
                                  </font>
                               </Label>
-                              <Label stylesheets="@stylesheets/style.css" text="00" textFill="WHITE">
+                              <Label fx:id="jLabelSeconds" stylesheets="@stylesheets/style.css" text="00" textFill="WHITE">
                                  <font>
                                     <Font name="System Bold" size="140.0" />
                                  </font>
@@ -62,7 +62,7 @@
                            <children>
                               <Pane maxHeight="68.0" maxWidth="168.0" minHeight="68.0" minWidth="168.0" prefHeight="68.0" prefWidth="168.0" stylesheets="@stylesheets/style.css">
                                  <children>
-                                    <Button contentDisplay="CENTER" layoutX="12.0" layoutY="12.0" maxHeight="45.0" maxWidth="145.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="145.0" stylesheets="@stylesheets/style.css" text="REINICIAR" textFill="WHITE">
+                                    <Button fx:id="jButtonReset" contentDisplay="CENTER" layoutX="12.0" layoutY="12.0" maxHeight="45.0" maxWidth="145.0" mnemonicParsing="false" onAction="handleButtonReset" prefHeight="45.0" prefWidth="145.0" stylesheets="@stylesheets/style.css" text="REINICIAR" textFill="WHITE">
                                        <styleClass>
                                           <String fx:value="background-color-cinza-claro" />
                                           <String fx:value="background-radius-10px" />
@@ -76,13 +76,10 @@
                                     <String fx:value="background-radius-10px" />
                                     <String fx:value="background-color-cinza-clarinho" />
                                  </styleClass>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
                               </Pane>
                               <Pane maxHeight="68.0" maxWidth="168.0" minHeight="68.0" minWidth="168.0" prefHeight="68.0" prefWidth="168.0">
                                  <children>
-                                    <Button layoutX="12.0" layoutY="11.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="145.0" stylesheets="@stylesheets/style.css" text="INICIAR" textFill="WHITE">
+                                    <Button fx:id="jButtonStart" layoutX="12.0" layoutY="11.0" mnemonicParsing="false" onAction="#handleButtonStart" prefHeight="45.0" prefWidth="145.0" stylesheets="@stylesheets/style.css" text="INICIAR" textFill="WHITE">
                                        <styleClass>
                                           <String fx:value="background-color-cinza-escuro" />
                                           <String fx:value="background-radius-10px" />
@@ -96,13 +93,10 @@
                                     <String fx:value="background-color-cinza-escurinho" />
                                     <String fx:value="background-radius-10px" />
                                  </styleClass>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
                               </Pane>
                               <Pane maxHeight="68.0" maxWidth="168.0" minHeight="68.0" minWidth="168.0" prefHeight="68.0" prefWidth="168.0" stylesheets="@stylesheets/style.css">
                                  <children>
-                                    <Button layoutX="12.0" layoutY="12.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="145.0" stylesheets="@stylesheets/style.css" text="PARAR" textFill="WHITE">
+                                    <Button fx:id="jButtonStop" layoutX="12.0" layoutY="12.0" mnemonicParsing="false" onAction="handleButtonStop" prefHeight="45.0" prefWidth="145.0" stylesheets="@stylesheets/style.css" text="PARAR" textFill="WHITE">
                                        <styleClass>
                                           <String fx:value="background-color-cinza-claro" />
                                           <String fx:value="background-radius-10px" />
@@ -116,9 +110,6 @@
                                     <String fx:value="background-radius-10px" />
                                     <String fx:value="background-color-cinza-clarinho" />
                                  </styleClass>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
                               </Pane>
                            </children>
                         </HBox>
@@ -189,4 +180,4 @@
          </BorderPane.margin>
       </ButtonBar>
    </top>
-</BorderPane>
+</fx:root>
