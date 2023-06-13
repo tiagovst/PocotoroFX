@@ -14,8 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="655.0" minWidth="960.0" prefHeight="768.0" prefWidth="1366.0" styleClass="background-color-fundo" stylesheets="@stylesheets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="655.0" minWidth="960.0" prefHeight="768.0" prefWidth="1366.0" styleClass="background-color-fundo" stylesheets="@stylesheets/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <left>
       <ImageView fitHeight="232.0" fitWidth="251.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="TOP_LEFT">
          <image>
@@ -70,22 +69,22 @@
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Label>
-                        <Spinner editable="true" maxWidth="70.0" GridPane.columnIndex="1">
+                        <Spinner id="jSpinnerPomodoro" editable="true" maxWidth="70.0" GridPane.columnIndex="1">
                            <GridPane.margin>
                               <Insets left="50.0" />
                            </GridPane.margin>
                         </Spinner>
-                        <Spinner editable="true" maxWidth="70.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Spinner id="jSpinnerSB" editable="true" maxWidth="70.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets left="50.0" />
                            </GridPane.margin>
                         </Spinner>
-                        <Spinner editable="true" maxWidth="70.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Spinner id="jSpinnerLB" editable="true" maxWidth="70.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets left="50.0" />
                            </GridPane.margin>
                         </Spinner>
-                        <Spinner editable="true" maxWidth="70.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <Spinner id="jSpinnerLBInterval" editable="true" maxWidth="70.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <GridPane.margin>
                               <Insets left="50.0" />
                            </GridPane.margin>
