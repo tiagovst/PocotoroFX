@@ -2,7 +2,6 @@
 
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -14,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="960.0" prefHeight="768.0" prefWidth="1368.0" styleClass="background-color-fundo" stylesheets="@stylesheets/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="960.0" prefHeight="768.0" prefWidth="1368.0" styleClass="background-color-fundo" stylesheets="@stylesheets/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.edu.ifba.controller.RegisterViewController">
    <center>
       <VBox alignment="CENTER" maxHeight="550.0" maxWidth="570.0" minHeight="550.0" minWidth="570.0" prefHeight="550.0" prefWidth="570.0" stylesheets="@stylesheets/style.css" BorderPane.alignment="CENTER">
          <children>
@@ -29,7 +28,7 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <TextField alignment="TOP_LEFT" layoutX="33.0" layoutY="171.0" prefHeight="50.0" prefWidth="465.0" promptText="seuemail@exemplo.com" styleClass="background-radius-10px" stylesheets="@stylesheets/style.css">
+                  <TextField fx:id="registerTxtEmail" alignment="TOP_LEFT" layoutX="33.0" layoutY="171.0" prefHeight="50.0" prefWidth="465.0" promptText="seuemail@exemplo.com" styleClass="background-radius-10px" stylesheets="@stylesheets/style.css">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -39,12 +38,12 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <PasswordField alignment="TOP_LEFT" layoutX="33.0" layoutY="263.0" prefHeight="50.0" prefWidth="465.0" promptText="********" styleClass="background-radius-10px" stylesheets="@stylesheets/style.css">
+                  <PasswordField fx:id="registerPasswordTxt" alignment="TOP_LEFT" layoutX="33.0" layoutY="263.0" prefHeight="50.0" prefWidth="465.0" promptText="********" styleClass="background-radius-10px" stylesheets="@stylesheets/style.css">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </PasswordField>
-                  <Button alignment="CENTER" layoutX="158.0" layoutY="430.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="215.0" stylesheets="@stylesheets/style.css" text="REGISTRAR" textFill="WHITE">
+                  <Button fx:id="registerButton" alignment="CENTER" layoutX="158.0" layoutY="430.0" mnemonicParsing="false" onAction="#onRegisterButtonAction" prefHeight="45.0" prefWidth="215.0" stylesheets="@stylesheets/style.css" text="REGISTRAR" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
@@ -52,30 +51,28 @@
                         <String fx:value="background-radius-10px" />
                         <String fx:value="button-background-color" />
                      </styleClass>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
+                     
                   </Button>
                   <Label alignment="TOP_LEFT" layoutX="33.0" layoutY="324.0" text="Confirmar Senha:" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <TextField alignment="TOP_LEFT" layoutX="33.0" layoutY="360.0" prefHeight="50.0" prefWidth="465.0" promptText="********" styleClass="background-radius-10px" stylesheets="@stylesheets/style.css">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </TextField>
                   <Label alignment="TOP_LEFT" layoutX="33.0" layoutY="43.0" text="Nome:" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Label>
-                  <TextField alignment="TOP_LEFT" layoutX="33.0" layoutY="79.0" prefHeight="50.0" prefWidth="465.0" promptText="nome" styleClass="background-radius-10px" stylesheets="@stylesheets/style.css">
+                  <TextField fx:id="registerTxtName" alignment="TOP_LEFT" layoutX="33.0" layoutY="79.0" prefHeight="50.0" prefWidth="465.0" promptText="nome" styleClass="background-radius-10px" stylesheets="@stylesheets/style.css">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </TextField>
+                  <PasswordField fx:id="registerPasswordTxtConfirm" alignment="TOP_LEFT" layoutX="33.0" layoutY="360.0" prefHeight="50.0" prefWidth="465.0" promptText="********" styleClass="background-radius-10px" stylesheets="@stylesheets/style.css">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </PasswordField>
                </children>
                <VBox.margin>
                   <Insets />
