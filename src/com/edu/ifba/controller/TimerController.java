@@ -6,12 +6,16 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.fxml.Initializable;
-//import com.edu.ifba.service.ServicePomodoroTimer;
+import com.edu.ifba.service.ServicePomodoroTimer;
 import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
+import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -20,6 +24,12 @@ import javafx.scene.Parent;
  */
 public class TimerController{
     //atributos
+    @FXML
+    private Button jButtonLogin;
+    
+    @FXML
+    private Button jButtonConfig;
+    
     
     @FXML
     private Button buttonStart;
@@ -41,72 +51,127 @@ public class TimerController{
     private Timer timer;
     private int totalSeconds;
     
-    private boolean isNewTimer = true; 
+    private ServicePomodoroTimer service;
+    
     
     //contrutor
     public TimerController() {
         
         
-        this.duracaoPomodoro = 25;
-        this.duracaoSB = 5;
-        this.duracaoLB = 10;
+        this.duracaoPomodoro = 25*60;
+        this.duracaoSB = 5*60;
+        this.duracaoLB = 10*60;
         
-        buttonStart.setOnAction(event -> {startTimer(25);});
+        //buttonStart.setOnAction(event -> {startTimer(25);});
 
+    }
+
+    // Método chamado ao inicializar o controlador
+    //public void initialize() {
+        // Atualizar o conteúdo do label ao iniciar o timer
+    //    myButton.setOnAction(event -> {
+    //        service.start();
+    //    );
+    //}
+
+    // Método para injetar o serviço no controlador
+    public void setService(ServicePomodoroTimer service) {
+        this.service = service;
     }
     
-    @FXML
-    public void onButtonStopAction() throws IOException{
-        startTimer(25);
+    public void updateLabel(int i, String message) {
+        // Verificar se o acesso ao label precisa ser feito na thread da interface gráfica
+        if (!jLabelMinutes.getScene().getWindow().isShowing()) {
+            return; // A janela foi fechada, interromper a atualização do label
+        }
 
-    }
-    
-    @FXML
-    public void onButtonStartAction() throws IOException{
-        startTimer(25);
-    }
-    
-    @FXML
-    public void onButtonResetAction() throws IOException{
-        startTimer(25);
-
-    }
-    
-    public void startTimer(int minutes) {
-        totalSeconds = minutes*60;
-        timer = new Timer();
-
-        TimerTask task = new TimerTask() {
-            public void run() {
-                if (totalSeconds > 0) {
-                    int minutes = totalSeconds / 60;
-                    jLabelMinutes.setText(Integer.toString(minutes));
-                    
-                    int seconds = totalSeconds % 60;
-                    jLabelSeconds.setText(Integer.toString(seconds));
-                    System.out.println("Time remaining: " + minutes + " minutes " + seconds + " seconds");
-                    totalSeconds--;
-                } else {
-                    System.out.println("Tempo Concluído");
-                    stopTimer();
-                }
-            }
-        };
-
-        timer.scheduleAtFixedRate(task, 0, 1000); // Schedule the task to run every 1 second
-    }
-
-    public void stopTimer() {
-        if (timer != null) {
-            timer.cancel();
-            timer.purge();
+        // Atualizar o conteúdo do label na thread da interface gráfica
+        if (i == 1){
+            Platform.runLater(() -> jLabelMinutes.setText(message));}
+        else{
+            Platform.runLater(() -> {
+                jLabelSeconds.setText(message);
+            });
         }
     }
     
-    private void openWindow(String path) throws IOException{
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource(path));
-        Parent pane = loader.load();
+    public void onButtonStopAction() throws IOException{
+        service.stopTimer();
+
+    }
+    
+    
+    public void onButtonStartAction() throws IOException{
+        service.start();
+    }
+    
+    
+    public void onButtonResetAction() throws IOException{
+        service.resetTimer();
+
+    }
+    
+    
+
+    
+
+    
+    public void openLogin(ActionEvent a) throws IOException{
+        
+        Parent root = FXMLLoader.load(getClass().getResource("/com/edu/ifba/view/LoginView.fxml"));
+        
+        Stage stage = (Stage) jButtonLogin.getScene().getWindow();
+
+        Scene newScene = new Scene(root);
+        stage.setScene(newScene);
+        stage.show();
+
+        
+    }
+    
+    public void openConfig(ActionEvent a) throws IOException{
+        
+        Parent root = FXMLLoader.load(getClass().getResource("/com/edu/ifba/view/ConfigurationsView.fxml"));
+        
+        Stage stage = (Stage) jButtonConfig.getScene().getWindow();
+
+        Scene newScene = new Scene(root);
+        stage.setScene(newScene);
+        stage.show();
+
+        
+    }
+
+    public int getDuracaoPomodoro() {
+        return duracaoPomodoro;
+    }
+
+    public void setDuracaoPomodoro(int duracaoPomodoro) {
+        this.duracaoPomodoro = duracaoPomodoro;
+    }
+
+    public int getDuracaoSB() {
+        return duracaoSB;
+    }
+
+    public void setDuracaoSB(int duracaoSB) {
+        this.duracaoSB = duracaoSB;
+    }
+
+    public int getDuracaoLB() {
+        return duracaoLB;
+    }
+
+    public void setDuracaoLB(int duracaoLB) {
+        this.duracaoLB = duracaoLB;
+    }
+
+    public int getIntervalLB() {
+        return intervalLB;
+    }
+
+    public void setIntervalLB(int intervalLB) {
+        this.intervalLB = intervalLB;
     }
     
 }
