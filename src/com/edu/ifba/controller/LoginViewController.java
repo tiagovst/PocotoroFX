@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.edu.ifba.controller;
 
 import com.edu.ifba.model.User;
@@ -86,7 +82,7 @@ public class LoginViewController {
     
     public void openMain() throws IOException{
         
-        JOptionPane.showMessageDialog(null, "aaaaaaaaaaaaaaa");
+//        JOptionPane.showMessageDialog(null, "aaaaaaaaaaaaaaa");
         
         Parent root = FXMLLoader.load(getClass().getResource("/com/edu/ifba/view/MainView.fxml"));
         

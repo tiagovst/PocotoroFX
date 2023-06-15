@@ -11,7 +11,7 @@ import java.util.TimerTask;
  *
  * @author gabriel
  */
-public class ServicePomodoroTimer {
+public class ServicePomodoroTimer extends TimerController{
     TimerController controller;
     String txtFinished;
     private Timer timer;
@@ -26,8 +26,6 @@ public class ServicePomodoroTimer {
         this.controller = controller;
     }
     
-    
-    
     //métodos
     public void start() {
         if (isNewTimer){
@@ -36,7 +34,6 @@ public class ServicePomodoroTimer {
             startTimer(this.actualSeconds);
         }
     }
-    
     
     public void update(){
     }

@@ -22,7 +22,7 @@ import javafx.stage.Stage;
  *
  * @author joeziojr
  */
-public class TimerController{
+public class TimerController implements Initializable{
     //atributos
     @FXML
     private Button jButtonLogin;
@@ -50,7 +50,6 @@ public class TimerController{
     
     private Timer timer;
     private int totalSeconds;
-    
     private ServicePomodoroTimer service;
     
     
@@ -67,12 +66,10 @@ public class TimerController{
     }
 
     // Método chamado ao inicializar o controlador
-    //public void initialize() {
-        // Atualizar o conteúdo do label ao iniciar o timer
-    //    myButton.setOnAction(event -> {
-    //        service.start();
-    //    );
-    //}
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        
+    }
 
     // Método para injetar o serviço no controlador
     public void setService(ServicePomodoroTimer service) {
@@ -116,7 +113,7 @@ public class TimerController{
     
 
     
-    public void openLogin(ActionEvent a) throws IOException{
+    public void onButtonLoginAction() throws IOException{
         
         Parent root = FXMLLoader.load(getClass().getResource("/com/edu/ifba/view/LoginView.fxml"));
         
@@ -129,7 +126,7 @@ public class TimerController{
         
     }
     
-    public void openConfig(ActionEvent a) throws IOException{
+    public void onButtonConfigAction() throws IOException{
         
         Parent root = FXMLLoader.load(getClass().getResource("/com/edu/ifba/view/ConfigurationsView.fxml"));
         
@@ -173,6 +170,7 @@ public class TimerController{
     public void setIntervalLB(int intervalLB) {
         this.intervalLB = intervalLB;
     }
+
     
 }
     

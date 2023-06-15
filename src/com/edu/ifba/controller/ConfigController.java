@@ -45,6 +45,10 @@ public class ConfigController {
     @FXML
     private Button jButtonUpdate;
     
+    public void onButtonUpdateAction() {
+        
+    }
+    
     public void openMain() throws IOException{
         
         JOptionPane.showMessageDialog(null, "aaaaaaaaaaaaaaa");

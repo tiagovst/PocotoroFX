@@ -19,11 +19,11 @@ public class Main extends Application {
     
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = FXMLLoader.load(getClass().getResource("/com/edu/ifba/view/MainView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/edu/ifba/view/MainView.fxml"));
         
         //Font.loadFont(getClass().getResourceAsStream("/com/edu/ifba/view/fonts/Lato-Regular.ttf"), 20);
-        fxmlLoader.setRoot(new AnchorPane());
-        Parent root = fxmlLoader.load();
+//        fxmlLoader.setRoot(new AnchorPane());
+//        Parent root = fxmlLoader.load();
         
         
         Scene scene = new Scene(root);
