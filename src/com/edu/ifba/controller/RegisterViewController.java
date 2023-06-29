@@ -65,7 +65,7 @@ public class RegisterViewController{
             if(UserDAO.insert(user)){
                 JOptionPane.showMessageDialog(null, "User cadastrado com sucesso");
 
-                Parent root = FXMLLoader.load(getClass().getResource("/com/edu/ifba/view/MainView.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/com/edu/ifba/view/LoginView.fxml"));
 
                 Stage stage = (Stage) registerButton.getScene().getWindow();
 
