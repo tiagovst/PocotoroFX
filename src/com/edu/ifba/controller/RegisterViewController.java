@@ -49,12 +49,12 @@ public class RegisterViewController{
     
      //Método de cadastro
     
-    public void onRegisterButtonAction(){
+    public void onRegisterButtonAction() throws IOException{
         
         cadastrar(registerTxtEmail.getText(), registerTxtName.getText(), registerPasswordTxt.getText());
     }
     
-    public void cadastrar(String txtEmail, String txtName, String txtPassword){
+    public void cadastrar(String txtEmail, String txtName, String txtPassword) throws IOException{
         
         if (validarCampos(registerTxtEmail.getText(), registerTxtName.getText(), registerPasswordTxt.getText(), registerPasswordTxtConfirm.getText())){
             User user = new User();
@@ -63,7 +63,16 @@ public class RegisterViewController{
             user.setPassword(encryptPassword(txtPassword));
             
             if(UserDAO.insert(user)){
-            JOptionPane.showMessageDialog(null, "User cadastrado com sucesso");
+                JOptionPane.showMessageDialog(null, "User cadastrado com sucesso");
+
+                Parent root = FXMLLoader.load(getClass().getResource("/com/edu/ifba/view/MainView.fxml"));
+
+                Stage stage = (Stage) registerButton.getScene().getWindow();
+
+                Scene newScene = new Scene(root);
+                stage.setScene(newScene);
+                stage.show();
+            
             }else if (!UserDAO.insert(user)){
                 JOptionPane.showMessageDialog(null, "Erro ao cadastrar");
             }
