@@ -88,27 +88,32 @@ public class RegisterViewController{
 
         boolean isIt = false;
         
-        User us = user.pesquisarUser(txtEmail, txtName);           
+        User us = user.pesquisarPorEmail(txtEmail);
+        User u2 = user.pesquisarPorNome(txtName);
         
         if(us.getId() > 0){
-           JOptionPane.showMessageDialog(null, "Nome de usuário, ou email já cadastrado");
+           JOptionPane.showMessageDialog(null, "Email já cadastrado");
         }else if (us.getId() == 0){
-            if ((txtEmail.equals("") == false) &&
-                (txtName.equals("") == false) &&
-                (txtPassword.equals("") == false)){
+            if (u2.getId() > 0){
+                    JOptionPane.showMessageDialog(null, "Nome de usuário já cadastrado");
+                    }else if (u2.getId() == 0){
+                        if ((txtEmail.equals("") == false) &&
+                            (txtName.equals("") == false) &&
+                            (txtPassword.equals("") == false)){
 
-                if(txtPassword.equals(txtPasswordConfirm)){
-                    isIt = true;
-                }else if(txtPassword.equals(txtPasswordConfirm) == false){
-                    JOptionPane.showMessageDialog(null, "Senhas não coincidem");
-                    isIt = false;
-                }
+                            if(txtPassword.equals(txtPasswordConfirm)){
+                                isIt = true;
+                            }else if(txtPassword.equals(txtPasswordConfirm) == false){
+                                JOptionPane.showMessageDialog(null, "Senhas não coincidem");
+                                isIt = false;
+                            }
 
-            }
-            else{
-                JOptionPane.showMessageDialog(null, "Há campos vazios");
-                isIt = false;
-            }
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(null, "Há campos vazios");
+                            isIt = false;
+                        }
+                    }
             
         }
         return isIt;

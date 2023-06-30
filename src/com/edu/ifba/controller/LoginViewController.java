@@ -41,7 +41,7 @@ public class LoginViewController {
     //Método que  verifica a existência de uma conta, verificando o email
     public boolean fazerLogin() throws IOException{
         if(validarCampos()){
-            User us = userDao.pesquisarPorEmail(loginEmailTxt.getText(),
+            User us = userDao.pesquisarUser(loginEmailTxt.getText(),
                     loginEmailTxt.getText(), loginPasswordField.getText());
             if(us.getId() > 0){
                 openMain();
