@@ -55,13 +55,13 @@ public class PomodoroTimer {
     public int getSeconds(int id) {
         switch(id){
             case 1:
-                return this.getPomodoro();
+                return this.getPomodoro()*60;
             
             case 2:
-                return this.getShortbreak();
+                return this.getShortbreak()*60;
                 
             case 3:
-                return this.getLongbreak();
+                return this.getLongbreak()*60;
         }
         return 0;
     }
