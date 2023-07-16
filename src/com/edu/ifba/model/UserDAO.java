@@ -40,7 +40,7 @@ public class UserDAO {
     }
     
     
-    public User pesquisarPorEmail(String email, String name, String password) {
+    public User pesquisarUser(String email, String name, String password) {
         String sql = "SELECT * FROM user WHERE email = ? OR name = ? AND password = ?";
         User user = new User();
         
@@ -73,13 +73,12 @@ public class UserDAO {
         return user; 
     }
     
-    //pesquisa um usuario apenas a partir do nome ou email, sem a senha
-    public User pesquisarUser(String name){
-        String sql = "SELECT * FROM user WHERE name = ?";
+    ///Função que verifica e existência de um email no banco
+    public User pesquisarPorEmail(String email){
+        String sql = "SELECT * FROM user WHERE email = ?";
         
         User user = new User();
-        user.setName("");
-        //user.setEmail("");
+        
         
         PreparedStatement pst;
         ResultSet rs;
@@ -87,12 +86,43 @@ public class UserDAO {
         try{
             
             pst = Conexao.getConexao().prepareStatement(sql);
-            pst.setString(1, name);
+            pst.setString(1,email);
+            rs = pst.executeQuery();
+            
+            while(rs.next()){
+                user.setEmail(rs.getString("email"));
+                user.setId(rs.getInt("id"));
+            }
+            
+            rs.close();
+            pst.close();
+            
+            
+        } catch(SQLException ex){
+            System.out.println(ex);
+        }
+        return user;
+    } 
+    
+    //Função que verifica e existência de um nome no banco
+    public User pesquisarPorNome(String name){
+        String sql = "SELECT * FROM user WHERE name = ?";
+        
+        User user = new User();
+        
+        
+        PreparedStatement pst;
+        ResultSet rs;
+        
+        try{
+            
+            pst = Conexao.getConexao().prepareStatement(sql);
+            pst.setString(1,name);
             rs = pst.executeQuery();
             
             while(rs.next()){
                 user.setName(rs.getString("name"));
-                //user.setEmail(rs.getString("email"));
+                user.setId(rs.getInt("id"));
             }
             
             rs.close();
