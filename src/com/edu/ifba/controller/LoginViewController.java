@@ -81,11 +81,14 @@ public class LoginViewController {
     }
     
     public void openMain() throws IOException{
+                 
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/edu/ifba/view/MainView.fxml"));	
         
-//        JOptionPane.showMessageDialog(null, "aaaaaaaaaaaaaaa");
+        TimerController controller = new TimerController();
         
-        Parent root = FXMLLoader.load(getClass().getResource("/com/edu/ifba/view/MainView.fxml"));
-        
+        loader.setController(controller);
+        Parent root = loader.load();
+                
         Stage stage = (Stage) loginRegisterButton.getScene().getWindow();
 
         Scene newScene = new Scene(root);

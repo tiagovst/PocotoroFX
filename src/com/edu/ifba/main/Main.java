@@ -20,15 +20,9 @@ public class Main extends Application {
     
     @Override
     public void start(Stage stage) throws IOException {
-        //Parent root = FXMLLoader.load(getClass().getResource("/com/edu/ifba/view/MainView.fxml"));
         
-        //Font.loadFont(getClass().getResourceAsStream("/com/edu/ifba/view/fonts/Lato-Regular.ttf"), 20);
-//        fxmlLoader.setRoot(new AnchorPane());
-//        Parent root = fxmlLoader.load();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/edu/ifba/view/MainView.fxml"));	
-        //root = loader.load();
         
-        //controller.setValue(pomodoroTimer);
         TimerController controller = new TimerController();
         
         loader.setController(controller);
