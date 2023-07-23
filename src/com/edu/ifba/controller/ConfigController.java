@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.edu.ifba.controller;
 
 import java.net.URL;
@@ -53,31 +50,19 @@ public class ConfigController implements Initializable{
     public void openMain(int pomodoro, int sb, int lb, int interval) throws IOException{
         pomodoroTimer = new PomodoroTimer(pomodoro, sb, lb, interval);
         timerNewController = new TimerController(pomodoroTimer);
-        //Parent root = FXMLLoader.load(getClass().getResource("/com/edu/ifba/view/MainView.fxml"));
-        
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/edu/ifba/view/MainView.fxml"));	
-        //root = loader.load();
-        
-        //controller.setValue(pomodoroTimer);
-        
         loader.setController(timerNewController);
         root = loader.load();
-        
         TimerController controller = loader.getController();
-
-
         
-        System.out.println("aqui viado");
         System.out.println(controller.getValue().getPomodoro());
         System.out.println(timerNewController.getValue().getPomodoro());
         System.out.println("-----\n");
         
         Stage stage = (Stage) jButtonUpdate.getScene().getWindow();
-
         Scene newScene = new Scene(root);
-
         stage.setScene(newScene);
-        
+        stage.setMaximized(true);
         stage.show();
         
     }
@@ -102,10 +87,7 @@ public class ConfigController implements Initializable{
         factoryInterval.setValue(timer.getValue().getInterval());
         jSpinnerLBInterval.setValueFactory(factoryInterval);
         
-        
-        
     }
-    
     
 }
 

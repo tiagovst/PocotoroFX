@@ -6,8 +6,6 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import com.edu.ifba.controller.TimerController;
 
@@ -20,20 +18,18 @@ public class Main extends Application {
     
     @Override
     public void start(Stage stage) throws IOException {
-        
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/edu/ifba/view/MainView.fxml"));	
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/edu/ifba/view/MainView.fxml"));
         
         TimerController controller = new TimerController();
-        
         loader.setController(controller);
         Parent root = loader.load();
-        
         Scene scene = new Scene(root);
+        
         stage.setScene(scene);
         stage.setTitle("Pocotoro");
-        stage.setResizable(false);
         stage.centerOnScreen();
         stage.show();
+        
     }
 
     /**
