@@ -158,6 +158,7 @@
    <top>
       <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <buttons>
+            <Button fx:id="jButtonMusic" mnemonicParsing="false" onAction="#onButtonMusicAction" text="Button" />
           <Button fx:id="jButtonLogin" mnemonicParsing="false" onAction="#onButtonLoginAction" stylesheets="@stylesheets/style.css" text="Login" textOverrun="CENTER_ELLIPSIS">
                <styleClass>
                   <String fx:value="background-radius-10px" />

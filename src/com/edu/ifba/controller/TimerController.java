@@ -28,6 +28,9 @@ public class TimerController implements Initializable {
 
     //atributos
     @FXML
+    private Button jButtonMusic;
+    
+    @FXML
     private Button jButtonLogin;
 
     @FXML
@@ -102,6 +105,14 @@ public class TimerController implements Initializable {
     public void onButtonResetAction() throws IOException {
         this.resetTimer();
         
+    }
+    
+    public void onButtonMusicAction() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/edu/ifba/view/PlaylistView.fxml"));
+        Stage stage = (Stage) jButtonMusic.getScene().getWindow();
+        Scene newScene = new Scene(root);
+        stage.setScene(newScene);
+        stage.show();
     }
 
     public void onButtonLoginAction() throws IOException {
