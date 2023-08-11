@@ -55,14 +55,11 @@ public class ConfigController implements Initializable{
         root = loader.load();
         TimerController controller = loader.getController();
         
-        System.out.println(controller.getValue().getPomodoro());
-        System.out.println(timerNewController.getValue().getPomodoro());
         System.out.println("-----\n");
         
         Stage stage = (Stage) jButtonUpdate.getScene().getWindow();
         Scene newScene = new Scene(root);
         stage.setScene(newScene);
-        stage.setMaximized(true);
         stage.show();
         
     }

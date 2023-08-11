@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="960.0" prefHeight="768.0" prefWidth="1368.0" styleClass="background-color-fundo" stylesheets="@stylesheets/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.edu.ifba.controller.RequestCodeViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="960.0" prefHeight="768.0" prefWidth="1368.0" styleClass="background-color-fundo" stylesheets="@stylesheets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.edu.ifba.controller.RequestCodeViewController">
     <center>
         <VBox alignment="CENTER" maxHeight="490.0" maxWidth="570.0" stylesheets="@stylesheets/style.css" BorderPane.alignment="CENTER">
             <children>
@@ -31,29 +31,17 @@
                         <String fx:value="background-radius-40px" />
                     </styleClass>
                     <children>
-                        <Button alignment="CENTER" layoutX="158.0" layoutY="223.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="215.0" stylesheets="@stylesheets/style.css" text="REDEFINIR" textFill="WHITE">
-                            <font>
-                                <Font name="System Bold" size="20.0" />
-                            </font>
-                            <styleClass>
-                                <String fx:value="background-radius-10px" />
-                                <String fx:value="button-background-color" />
-                            </styleClass>
-                            <cursor>
-                                <Cursor fx:constant="HAND" />
-                            </cursor>
-                        </Button>
-                        <Label alignment="TOP_LEFT" layoutX="33.0" layoutY="36.0" text="Email:" textFill="WHITE">
+                        <Label alignment="TOP_LEFT" layoutX="33.0" layoutY="75.0" text="Email:" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="20.0" />
                             </font>
                         </Label>
-                        <TextField alignment="TOP_LEFT" layoutX="33.0" layoutY="72.0" prefHeight="50.0" prefWidth="465.0" promptText="seuemail@exemplo.com" styleClass="background-radius-10px" stylesheets="@stylesheets/style.css">
+                        <TextField fx:id="requestTxtEmail" alignment="TOP_LEFT" layoutX="33.0" layoutY="111.0" prefHeight="50.0" prefWidth="465.0" promptText="seuemail@exemplo.com" styleClass="background-radius-10px" stylesheets="@stylesheets/style.css">
                             <font>
                                 <Font size="20.0" />
                             </font>
                         </TextField>
-                  <Button alignment="CENTER" contentDisplay="CENTER" layoutX="158.0" layoutY="168.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="215.0" stylesheets="@stylesheets/style.css" text="ENVIAR O CÓDIGO" textFill="WHITE">
+                  <Button fx:id="requestButtonSendCode" alignment="CENTER" contentDisplay="CENTER" layoutX="146.0" layoutY="232.0" mnemonicParsing="false" onAction="#handleButtonSendCode" prefHeight="45.0" prefWidth="239.0" stylesheets="@stylesheets/style.css" text="ENVIAR O CÓDIGO" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>

@@ -68,7 +68,6 @@ public class TimerController implements Initializable {
 
     //construtor
     public TimerController() {
-        System.out.println(this.getValue());
         if (this.value == null) {
             this.value = new PomodoroTimer(25, 5, 10, 4);
         }
@@ -80,7 +79,6 @@ public class TimerController implements Initializable {
     }
 
     public TimerController(PomodoroTimer timerPomodoro) {
-        System.out.println(this.getValue());
         value = timerPomodoro;
         this.intervalLB = value.getInterval();
         listMinSec.add(Integer.toString(value.getPomodoro()));
@@ -92,7 +90,7 @@ public class TimerController implements Initializable {
     // Métodos onAction para os botões
     public void onButtonStopAction() throws IOException {
         this.stopTimer();
-        System.out.println("Parou" + actualSeconds);
+        System.out.println("Parou -> " + actualSeconds);
         
     }
 
@@ -111,7 +109,6 @@ public class TimerController implements Initializable {
         Stage stage = (Stage) jButtonLogin.getScene().getWindow();
         Scene newScene = new Scene(root);
         stage.setScene(newScene);
-        stage.setMaximized(true);
         stage.show();
         
     }
@@ -121,7 +118,6 @@ public class TimerController implements Initializable {
         Stage stage = (Stage) jButtonConfig.getScene().getWindow();
         Scene newScene = new Scene(root);
         stage.setScene(newScene);
-        stage.setMaximized(true);
         stage.show();
         
     }
@@ -173,7 +169,7 @@ public class TimerController implements Initializable {
                     int seconds = totalSeconds % 60;
 
                     //colocando eles no interável e na tela
-                    minutesStr = String.format("%02d", minutes);
+                    minutesStr = String.format("%d", minutes);
                     listMinSec.set(0, minutesStr);
                     updateLabel(1, listMinSec.get(0));
 
@@ -242,7 +238,7 @@ public class TimerController implements Initializable {
         setIsNewTimer(true);
         this.totalSeconds = value.getSeconds(idState);
         isTimerRunning = false;
-        updateLabel(1, String.format("%02d", value.getPomodoro()));
+        updateLabel(1, String.format("%d", value.getPomodoro()));
         updateLabel(2, "00");
     }
 
