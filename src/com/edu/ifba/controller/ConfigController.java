@@ -1,4 +1,3 @@
-
 package com.edu.ifba.controller;
 
 import java.net.URL;
@@ -19,72 +18,71 @@ import javafx.stage.Stage;
  *
  * @author dokidokiabr
  */
-public class ConfigController implements Initializable{
-    
+public class ConfigController implements Initializable {
+
     //atributos
     PomodoroTimer pomodoroTimer;
     TimerController timer;
     TimerController timerNewController;
-    
+
     @FXML
     private Spinner<Integer> jSpinnerPomodoro;
-    
+
     @FXML
     private Spinner<Integer> jSpinnerSB;
-    
+
     @FXML
     private Spinner<Integer> jSpinnerLB;
-    
+
     @FXML
     private Spinner<Integer> jSpinnerLBInterval;
-    
+
     @FXML
     private Button jButtonUpdate;
-    
+
     private Parent root;
-    
+
     public void onButtonUpdateAction() throws IOException {
         openMain(jSpinnerPomodoro.getValueFactory().getValue(), jSpinnerSB.getValueFactory().getValue(), jSpinnerLB.getValueFactory().getValue(), jSpinnerLBInterval.getValueFactory().getValue());
     }
-    
-    public void openMain(int pomodoro, int sb, int lb, int interval) throws IOException{
+
+    public void openMain(int pomodoro, int sb, int lb, int interval) throws IOException {
         pomodoroTimer = new PomodoroTimer(pomodoro, sb, lb, interval);
         timerNewController = new TimerController(pomodoroTimer);
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/edu/ifba/view/MainView.fxml"));	
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/edu/ifba/view/MainView.fxml"));
         loader.setController(timerNewController);
         root = loader.load();
         TimerController controller = loader.getController();
-        
+
         System.out.println("-----\n");
-        
+
         Stage stage = (Stage) jButtonUpdate.getScene().getWindow();
         Scene newScene = new Scene(root);
         stage.setScene(newScene);
         stage.show();
-        
+
     }
-    
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         this.timer = new TimerController();
-        
+
         SpinnerValueFactory factoryPomodoro = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 60, 25);
         factoryPomodoro.setValue(timer.getValue().getPomodoro());
         jSpinnerPomodoro.setValueFactory(factoryPomodoro);
-        
+
         SpinnerValueFactory factorySB = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 25, 5);
         factorySB.setValue(timer.getValue().getShortbreak());
         jSpinnerSB.setValueFactory(factorySB);
-        
+
         SpinnerValueFactory factoryLB = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 30, 10);
         factoryLB.setValue(timer.getValue().getLongbreak());
         jSpinnerLB.setValueFactory(factoryLB);
-        
+
         SpinnerValueFactory factoryInterval = new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 8, 4);
         factoryInterval.setValue(timer.getValue().getInterval());
         jSpinnerLBInterval.setValueFactory(factoryInterval);
-        
-    }
-    
-}
 
+    }
+
+}

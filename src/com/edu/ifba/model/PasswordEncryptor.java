@@ -4,7 +4,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class PasswordEncryptor {
-    
+
     public static String encryptPassword(String password) {
         try {
             // Create MD5 hashing instance

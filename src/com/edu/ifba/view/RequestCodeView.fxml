@@ -41,18 +41,18 @@
                                 <Font size="20.0" />
                             </font>
                         </TextField>
-                  <Button fx:id="requestButtonSendCode" alignment="CENTER" contentDisplay="CENTER" layoutX="146.0" layoutY="232.0" mnemonicParsing="false" onAction="#handleButtonSendCode" prefHeight="45.0" prefWidth="239.0" stylesheets="@stylesheets/style.css" text="ENVIAR O CÓDIGO" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="button-background-color" />
-                        <String fx:value="background-radius-10px" />
-                     </styleClass>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
+                        <Button fx:id="requestButtonSendCode" alignment="CENTER" contentDisplay="CENTER" layoutX="146.0" layoutY="232.0" mnemonicParsing="false" onAction="#handleButtonSendCode" prefHeight="45.0" prefWidth="239.0" stylesheets="@stylesheets/style.css" text="ENVIAR O CÓDIGO" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                            <styleClass>
+                                <String fx:value="button-background-color" />
+                                <String fx:value="background-radius-10px" />
+                            </styleClass>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
                     </children>
                     <VBox.margin>
                         <Insets />

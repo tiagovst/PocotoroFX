@@ -27,7 +27,7 @@ import javax.swing.JOptionPane;
  *
  * @author joeziojr
  */
-public class RegisterViewController{
+public class RegisterViewController {
 
     @FXML
     private TextField registerTxtEmail;
@@ -39,28 +39,25 @@ public class RegisterViewController{
     private TextField registerTxtName;
     @FXML
     private PasswordField registerPasswordTxtConfirm;
-    
-    private UserDAO user = new UserDAO(); 
+
+    private UserDAO user = new UserDAO();
 
     /**
      * Initializes the controller class.
-     */ 
-    
-    
-     //Método de cadastro
-    
-    public void onRegisterButtonAction() throws IOException{
+     */
+    //Método de cadastro
+    public void onRegisterButtonAction() throws IOException {
         cadastrar(registerTxtEmail.getText(), registerTxtName.getText(), registerPasswordTxt.getText());
     }
-    
-    public void cadastrar(String txtEmail, String txtName, String txtPassword) throws IOException{
-        if (validarCampos(registerTxtEmail.getText(), registerTxtName.getText(), registerPasswordTxt.getText(), registerPasswordTxtConfirm.getText())){
+
+    public void cadastrar(String txtEmail, String txtName, String txtPassword) throws IOException {
+        if (validarCampos(registerTxtEmail.getText(), registerTxtName.getText(), registerPasswordTxt.getText(), registerPasswordTxtConfirm.getText())) {
             User user = new User();
             user.setEmail(txtEmail);
             user.setName(txtName);
             user.setPassword(encryptPassword(txtPassword));
-            
-            if(UserDAO.insert(user)){
+
+            if (UserDAO.insert(user)) {
 
                 Parent root = FXMLLoader.load(getClass().getResource("/com/edu/ifba/view/LoginView.fxml"));
 
@@ -70,55 +67,48 @@ public class RegisterViewController{
                 stage.setScene(newScene);
                 stage.show();
                 JOptionPane.showMessageDialog(null, "User cadastrado com sucesso");
-                
-            }else if (!UserDAO.insert(user)){
+
+            } else if (!UserDAO.insert(user)) {
                 JOptionPane.showMessageDialog(null, "Erro ao cadastrar");
             }
         }
-        
-        
+
     }
-    
-    
+
     /*Método que confere se os dados foram inseridos e se as senhas batem
         Ele também verifica a existência do usuário no banco*/
-    
-    public boolean validarCampos(String txtEmail, String txtName, String txtPassword, String txtPasswordConfirm){
-        
+    public boolean validarCampos(String txtEmail, String txtName, String txtPassword, String txtPasswordConfirm) {
 
         boolean isIt = false;
-        
+
         User us = user.pesquisarPorEmail(txtEmail);
         User u2 = user.pesquisarPorNome(txtName);
-        
-        if(us.getId() > 0){
-           JOptionPane.showMessageDialog(null, "Email já cadastrado");
-        }else if (us.getId() == 0){
-            if (u2.getId() > 0){
-                    JOptionPane.showMessageDialog(null, "Nome de usuário já cadastrado");
-                    }else if (u2.getId() == 0){
-                        if ((txtEmail.equals("") == false) &&
-                            (txtName.equals("") == false) &&
-                            (txtPassword.equals("") == false)){
 
-                            if(txtPassword.equals(txtPasswordConfirm)){
-                                isIt = true;
-                            }else if(txtPassword.equals(txtPasswordConfirm) == false){
-                                JOptionPane.showMessageDialog(null, "Senhas não coincidem");
-                                isIt = false;
-                            }
+        if (us.getId() > 0) {
+            JOptionPane.showMessageDialog(null, "Email já cadastrado");
+        } else if (us.getId() == 0) {
+            if (u2.getId() > 0) {
+                JOptionPane.showMessageDialog(null, "Nome de usuário já cadastrado");
+            } else if (u2.getId() == 0) {
+                if ((txtEmail.equals("") == false)
+                        && (txtName.equals("") == false)
+                        && (txtPassword.equals("") == false)) {
 
-                        }
-                        else{
-                            JOptionPane.showMessageDialog(null, "Há campos vazios");
-                            isIt = false;
-                        }
+                    if (txtPassword.equals(txtPasswordConfirm)) {
+                        isIt = true;
+                    } else if (txtPassword.equals(txtPasswordConfirm) == false) {
+                        JOptionPane.showMessageDialog(null, "Senhas não coincidem");
+                        isIt = false;
                     }
-            
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "Há campos vazios");
+                    isIt = false;
+                }
+            }
+
         }
         return isIt;
     }
 
-   
 }
-    

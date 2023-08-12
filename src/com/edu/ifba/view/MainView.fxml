@@ -15,169 +15,169 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="960.0" prefHeight="768.0" prefWidth="1366.0" styleClass="background-color-fundo" stylesheets="@stylesheets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <center>
-      <VBox BorderPane.alignment="CENTER">
-         <children>
-            <HBox alignment="CENTER">
-               <children>
-                  <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="273.0" prefWidth="573.0" stylesheets="@stylesheets/style.css">
-                     <styleClass>
+    <center>
+        <VBox BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER">
+                    <children>
+                        <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="273.0" prefWidth="573.0" stylesheets="@stylesheets/style.css">
+                            <styleClass>
+                                <String fx:value="background-color-cinza-clarinho" />
+                                <String fx:value="background-radius-40px" />
+                            </styleClass>
+                            <children>
+                                <HBox alignment="CENTER" layoutX="17.0" layoutY="17.0" prefHeight="240.0" prefWidth="540.0" stylesheets="@stylesheets/style.css">
+                                    <children>
+                                        <Label fx:id="jLabelMinutes" stylesheets="@stylesheets/style.css" text="00" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="140.0" />
+                                            </font>
+                                        </Label>
+                                        <Label alignment="TOP_CENTER" stylesheets="@stylesheets/style.css" text=":" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="140.0" />
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="jLabelSeconds" stylesheets="@stylesheets/style.css" text="00" textFill="WHITE">
+                                            <font>
+                                                <Font name="System Bold" size="140.0" />
+                                            </font>
+                                        </Label>
+                                    </children>
+                                    <styleClass>
+                                        <String fx:value="background-color-cinza-claro" />
+                                        <String fx:value="background-radius-40px" />
+                                    </styleClass>
+                                </HBox>
+                            </children>
+                        </Pane>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                    <children>
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                            <children>
+                                <HBox alignment="CENTER" layoutX="-172.0" maxWidth="300.0" prefHeight="100.0" prefWidth="300.0" spacing="20.0">
+                                    <children>
+                                        <Pane maxHeight="68.0" maxWidth="168.0" minHeight="68.0" minWidth="168.0" prefHeight="68.0" prefWidth="168.0" stylesheets="@stylesheets/style.css">
+                                            <children>
+                                                <Button fx:id="buttonReset" contentDisplay="CENTER" layoutX="12.0" layoutY="12.0" maxHeight="45.0" maxWidth="145.0" mnemonicParsing="false" onAction="#onButtonResetAction" prefHeight="45.0" prefWidth="145.0" stylesheets="@stylesheets/style.css" text="REINICIAR" textFill="WHITE">
+                                                    <styleClass>
+                                                        <String fx:value="background-color-cinza-claro" />
+                                                        <String fx:value="background-radius-10px" />
+                                                    </styleClass>
+                                                    <font>
+                                                        <Font name="System Bold" size="20.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                            <styleClass>
+                                                <String fx:value="background-radius-10px" />
+                                                <String fx:value="background-color-cinza-clarinho" />
+                                            </styleClass>
+                                        </Pane>
+                                        <Pane maxHeight="68.0" maxWidth="168.0" minHeight="68.0" minWidth="168.0" prefHeight="68.0" prefWidth="168.0">
+                                            <children>
+                                                <Button fx:id="buttonStart" layoutX="12.0" layoutY="11.0" mnemonicParsing="false" onAction="#onButtonStartAction" prefHeight="45.0" prefWidth="145.0" stylesheets="@stylesheets/style.css" text="INICIAR" textFill="WHITE">
+                                                    <styleClass>
+                                                        <String fx:value="background-color-cinza-escuro" />
+                                                        <String fx:value="background-radius-10px" />
+                                                    </styleClass>
+                                                    <font>
+                                                        <Font name="System Bold" size="20.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                            <styleClass>
+                                                <String fx:value="background-color-cinza-escurinho" />
+                                                <String fx:value="background-radius-10px" />
+                                            </styleClass>
+                                        </Pane>
+                                        <Pane maxHeight="68.0" maxWidth="168.0" minHeight="68.0" minWidth="168.0" prefHeight="68.0" prefWidth="168.0" stylesheets="@stylesheets/style.css">
+                                            <children>
+                                                <Button fx:id="buttonStop" layoutX="12.0" layoutY="12.0" mnemonicParsing="false" onAction="#onButtonStopAction" prefHeight="45.0" prefWidth="145.0" stylesheets="@stylesheets/style.css" text="PARAR" textFill="WHITE">
+                                                    <styleClass>
+                                                        <String fx:value="background-color-cinza-claro" />
+                                                        <String fx:value="background-radius-10px" />
+                                                    </styleClass>
+                                                    <font>
+                                                        <Font name="System Bold" size="20.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                            <styleClass>
+                                                <String fx:value="background-radius-10px" />
+                                                <String fx:value="background-color-cinza-clarinho" />
+                                            </styleClass>
+                                        </Pane>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </Pane>
+                    </children>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </HBox>
+            </children>
+            <BorderPane.margin>
+                <Insets left="-91.0" top="100.0" />
+            </BorderPane.margin>
+        </VBox>
+    </center>
+    <right>
+        <ImageView fitHeight="329.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="BOTTOM_RIGHT">
+            <viewport>
+                <Rectangle2D />
+            </viewport>
+            <image>
+                <Image url="@images/bolhas%202.png" />
+            </image>
+        </ImageView>
+    </right>
+    <left>
+        <ImageView fitHeight="232.0" fitWidth="251.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="TOP_LEFT">
+            <image>
+                <Image url="@images/bolhas%201.png" />
+            </image>
+            <viewport>
+                <Rectangle2D />
+            </viewport>
+            <BorderPane.margin>
+                <Insets top="-63.0" />
+            </BorderPane.margin>
+        </ImageView>
+    </left>
+    <bottom>
+        <Label alignment="CENTER" contentDisplay="RIGHT" text="Pocotoro" textFill="#586875" BorderPane.alignment="CENTER">
+            <font>
+                <Font name="System Bold" size="27.0" />
+            </font>
+        </Label>
+    </bottom>
+    <top>
+        <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <buttons>
+                <Button fx:id="jButtonMusic" mnemonicParsing="false" onAction="#onButtonMusicAction" text="Button" />
+                <Button fx:id="jButtonLogin" mnemonicParsing="false" onAction="#onButtonLoginAction" stylesheets="@stylesheets/style.css" text="Login" textOverrun="CENTER_ELLIPSIS">
+                    <styleClass>
+                        <String fx:value="background-radius-10px" />
                         <String fx:value="background-color-cinza-clarinho" />
-                        <String fx:value="background-radius-40px" />
-                     </styleClass>
-                     <children>
-                        <HBox alignment="CENTER" layoutX="17.0" layoutY="17.0" prefHeight="240.0" prefWidth="540.0" stylesheets="@stylesheets/style.css">
-                           <children>
-                              <Label fx:id="jLabelMinutes" stylesheets="@stylesheets/style.css" text="00" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="140.0" />
-                                 </font>
-                              </Label>
-                              <Label alignment="TOP_CENTER" stylesheets="@stylesheets/style.css" text=":" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="140.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="jLabelSeconds" stylesheets="@stylesheets/style.css" text="00" textFill="WHITE">
-                                 <font>
-                                    <Font name="System Bold" size="140.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <styleClass>
-                              <String fx:value="background-color-cinza-claro" />
-                              <String fx:value="background-radius-40px" />
-                           </styleClass>
-                        </HBox>
-                     </children>
-                  </Pane>
-               </children>
-            </HBox>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
-               <children>
-                  <Pane prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <HBox alignment="CENTER" layoutX="-172.0" maxWidth="300.0" prefHeight="100.0" prefWidth="300.0" spacing="20.0">
-                           <children>
-                              <Pane maxHeight="68.0" maxWidth="168.0" minHeight="68.0" minWidth="168.0" prefHeight="68.0" prefWidth="168.0" stylesheets="@stylesheets/style.css">
-                                 <children>
-                                    <Button fx:id="buttonReset" contentDisplay="CENTER" layoutX="12.0" layoutY="12.0" maxHeight="45.0" maxWidth="145.0" mnemonicParsing="false" onAction="#onButtonResetAction" prefHeight="45.0" prefWidth="145.0" stylesheets="@stylesheets/style.css" text="REINICIAR" textFill="WHITE">
-                                       <styleClass>
-                                          <String fx:value="background-color-cinza-claro" />
-                                          <String fx:value="background-radius-10px" />
-                                       </styleClass>
-                                       <font>
-                                          <Font name="System Bold" size="20.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                                 <styleClass>
-                                    <String fx:value="background-radius-10px" />
-                                    <String fx:value="background-color-cinza-clarinho" />
-                                 </styleClass>
-                              </Pane>
-                              <Pane maxHeight="68.0" maxWidth="168.0" minHeight="68.0" minWidth="168.0" prefHeight="68.0" prefWidth="168.0">
-                                 <children>
-                                    <Button fx:id="buttonStart" layoutX="12.0" layoutY="11.0" mnemonicParsing="false" onAction="#onButtonStartAction" prefHeight="45.0" prefWidth="145.0" stylesheets="@stylesheets/style.css" text="INICIAR" textFill="WHITE">
-                                       <styleClass>
-                                          <String fx:value="background-color-cinza-escuro" />
-                                          <String fx:value="background-radius-10px" />
-                                       </styleClass>
-                                       <font>
-                                          <Font name="System Bold" size="20.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                                 <styleClass>
-                                    <String fx:value="background-color-cinza-escurinho" />
-                                    <String fx:value="background-radius-10px" />
-                                 </styleClass>
-                              </Pane>
-                              <Pane maxHeight="68.0" maxWidth="168.0" minHeight="68.0" minWidth="168.0" prefHeight="68.0" prefWidth="168.0" stylesheets="@stylesheets/style.css">
-                                 <children>
-                                    <Button fx:id="buttonStop" layoutX="12.0" layoutY="12.0" mnemonicParsing="false" onAction="#onButtonStopAction" prefHeight="45.0" prefWidth="145.0" stylesheets="@stylesheets/style.css" text="PARAR" textFill="WHITE">
-                                       <styleClass>
-                                          <String fx:value="background-color-cinza-claro" />
-                                          <String fx:value="background-radius-10px" />
-                                       </styleClass>
-                                       <font>
-                                          <Font name="System Bold" size="20.0" />
-                                       </font>
-                                    </Button>
-                                 </children>
-                                 <styleClass>
-                                    <String fx:value="background-radius-10px" />
-                                    <String fx:value="background-color-cinza-clarinho" />
-                                 </styleClass>
-                              </Pane>
-                           </children>
-                        </HBox>
-                     </children>
-                  </Pane>
-               </children>
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-            </HBox>
-         </children>
-         <BorderPane.margin>
-            <Insets left="-91.0" top="100.0" />
-         </BorderPane.margin>
-      </VBox>
-   </center>
-   <right>
-      <ImageView fitHeight="329.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="BOTTOM_RIGHT">
-         <viewport>
-            <Rectangle2D />
-         </viewport>
-         <image>
-            <Image url="@images/bolhas%202.png" />
-         </image>
-      </ImageView>
-   </right>
-   <left>
-      <ImageView fitHeight="232.0" fitWidth="251.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="TOP_LEFT">
-         <image>
-            <Image url="@images/bolhas%201.png" />
-         </image>
-         <viewport>
-            <Rectangle2D />
-         </viewport>
-         <BorderPane.margin>
-            <Insets top="-63.0" />
-         </BorderPane.margin>
-      </ImageView>
-   </left>
-   <bottom>
-      <Label alignment="CENTER" contentDisplay="RIGHT" text="Pocotoro" textFill="#586875" BorderPane.alignment="CENTER">
-         <font>
-            <Font name="System Bold" size="27.0" />
-         </font>
-      </Label>
-   </bottom>
-   <top>
-      <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-        <buttons>
-            <Button fx:id="jButtonMusic" mnemonicParsing="false" onAction="#onButtonMusicAction" text="Button" />
-          <Button fx:id="jButtonLogin" mnemonicParsing="false" onAction="#onButtonLoginAction" stylesheets="@stylesheets/style.css" text="Login" textOverrun="CENTER_ELLIPSIS">
-               <styleClass>
-                  <String fx:value="background-radius-10px" />
-                  <String fx:value="background-color-cinza-clarinho" />
-               </styleClass>
-            </Button>
-            <Button fx:id="jButtonConfig" mnemonicParsing="false" onAction="#onButtonConfigAction" stylesheets="@stylesheets/style.css" text="Config">
-               <styleClass>
-                  <String fx:value="background-radius-10px" />
-                  <String fx:value="background-color-cinza-clarinho" />
-               </styleClass>
-            </Button>
-        </buttons>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-         <BorderPane.margin>
-            <Insets right="5.0" top="5.0" />
-         </BorderPane.margin>
-      </ButtonBar>
-   </top>
+                    </styleClass>
+                </Button>
+                <Button fx:id="jButtonConfig" mnemonicParsing="false" onAction="#onButtonConfigAction" stylesheets="@stylesheets/style.css" text="Config">
+                    <styleClass>
+                        <String fx:value="background-radius-10px" />
+                        <String fx:value="background-color-cinza-clarinho" />
+                    </styleClass>
+                </Button>
+            </buttons>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+            <BorderPane.margin>
+                <Insets right="5.0" top="5.0" />
+            </BorderPane.margin>
+        </ButtonBar>
+    </top>
 </BorderPane>

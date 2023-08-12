@@ -1,4 +1,3 @@
-
 package com.edu.ifba.controller;
 
 import com.edu.ifba.model.PomodoroTimer;
@@ -17,7 +16,9 @@ import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -29,7 +30,7 @@ public class TimerController implements Initializable {
     //atributos
     @FXML
     private Button jButtonMusic;
-    
+
     @FXML
     private Button jButtonLogin;
 
@@ -87,33 +88,42 @@ public class TimerController implements Initializable {
         listMinSec.add(Integer.toString(value.getPomodoro()));
         listMinSec.add("00");
         this.actualSeconds = value.getSeconds(idState);
-        
+
     }
 
     // Métodos onAction para os botões
     public void onButtonStopAction() throws IOException {
         this.stopTimer();
         System.out.println("Parou -> " + actualSeconds);
-        
+
     }
 
     public void onButtonStartAction() throws IOException {
         this.start();
-        
+
     }
 
     public void onButtonResetAction() throws IOException {
         this.resetTimer();
-        
+
     }
-    
+
     public void onButtonMusicAction() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/edu/ifba/view/PlaylistView.fxml"));
-        Stage stage = (Stage) jButtonMusic.getScene().getWindow();
-        Scene newScene = new Scene(root);
-        stage.setScene(newScene);
-        stage.show();
-    }
+        // Carrega o arquivo FXML da tela de música
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/edu/ifba/view/PlaylistView.fxml"));
+        Parent root = loader.load();
+
+        // Cria uma nova janela para a tela de música
+        Stage musicStage = new Stage();
+//        musicStage.initStyle(StageStyle.UNDECORATED);
+        musicStage.initModality(Modality.APPLICATION_MODAL);
+        musicStage.initOwner(jButtonMusic.getScene().getWindow());
+
+        // Define o conteúdo da janela
+        Scene musicScene = new Scene(root);
+        musicStage.setScene(musicScene);
+        musicStage.showAndWait(); // Mostra a janela e aguarda até que seja fechada
+}
 
     public void onButtonLoginAction() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/edu/ifba/view/LoginView.fxml"));
@@ -121,7 +131,7 @@ public class TimerController implements Initializable {
         Scene newScene = new Scene(root);
         stage.setScene(newScene);
         stage.show();
-        
+
     }
 
     public void onButtonConfigAction() throws IOException {
@@ -130,7 +140,7 @@ public class TimerController implements Initializable {
         Scene newScene = new Scene(root);
         stage.setScene(newScene);
         stage.show();
-        
+
     }
 
     //Função para atualizar as labels
@@ -192,7 +202,7 @@ public class TimerController implements Initializable {
                     totalSeconds--;
                     actualSeconds = totalSeconds;
                     System.out.println(actualSeconds);
-                    
+
                 } else {
                     System.out.println(txtFinished);
                     switch (idState) {
@@ -215,7 +225,7 @@ public class TimerController implements Initializable {
                     System.out.println(idState);
                     System.out.println(isNewTimer);
                     resetTimerAfterFinished();
-                    
+
                 }
             }
         };
@@ -232,7 +242,7 @@ public class TimerController implements Initializable {
             timer.purge();
         }
         isTimerRunning = false;
-        
+
     }
 
     public void resetTimerAfterFinished() {
@@ -279,9 +289,10 @@ public class TimerController implements Initializable {
         System.out.println(listMinSec);
         jLabelMinutes.setText(listMinSec.get(0));
         jLabelSeconds.setText(listMinSec.get(1));
+        
         /*  atualiza a label do timer com o tempo padrao (nao utiliza Plataform.runLater()
             pois não é uma ação de risco neste momento)
-        */
+         */
     }
 
 }

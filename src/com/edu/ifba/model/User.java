@@ -5,7 +5,7 @@ package com.edu.ifba.model;
  * @author joeziojr
  */
 public class User {
-    
+
     private int id;
     private String name;
     private String email;
@@ -43,5 +43,5 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
-    
+
 }

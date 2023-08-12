@@ -6,11 +6,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="260.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.edu.ifba.controller.PlaylistViewController">
-   <children>
-      <Separator layoutY="57.0" prefHeight="0.0" prefWidth="400.0" />
-      <Label fx:id="jLabelSongName" layoutX="181.0" layoutY="14.0" text="Música" />
-      <Button fx:id="jButtonPlayPause" layoutX="174.0" layoutY="195.0" mnemonicParsing="false" onAction="#onJButtonPlayPauseAction" text="Button" />
-      <Button fx:id="jButtonNextSong" layoutX="226.0" layoutY="195.0" mnemonicParsing="false" onAction="#onJButtonNextSongAction" text="Button" AnchorPane.leftAnchor="246.0" />
-      <Button fx:id="jButtonPreviousSong" layoutX="122.0" layoutY="195.0" mnemonicParsing="false" onAction="#onJButtonPreviousSongAction" text="Button" AnchorPane.rightAnchor="246.0" />
-   </children>
+    <children>
+        <Separator layoutY="57.0" prefHeight="0.0" prefWidth="400.0" />
+        <Label fx:id="jLabelSongName" layoutX="181.0" layoutY="14.0" text="Música" />
+        <Button fx:id="jButtonPlayPause" layoutX="174.0" layoutY="195.0" mnemonicParsing="false" onAction="#onJButtonPlayPauseAction" text="Button" />
+        <Button fx:id="jButtonNextSong" layoutX="226.0" layoutY="195.0" mnemonicParsing="false" onAction="#onJButtonNextSongAction" text="Button" AnchorPane.leftAnchor="246.0" />
+        <Button fx:id="jButtonPreviousSong" layoutX="122.0" layoutY="195.0" mnemonicParsing="false" onAction="#onJButtonPreviousSongAction" text="Button" AnchorPane.rightAnchor="246.0" />
+    </children>
 </AnchorPane>

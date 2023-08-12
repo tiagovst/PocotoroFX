@@ -1,12 +1,13 @@
 package com.edu.ifba.model;
 
 public class PomodoroTimer {
+
     //atributos em segundos
     private int pomodoro;
     private int shortbreak;
     private int longbreak;
     private int interval;
-    
+
     //construtor
     public PomodoroTimer(int pomodoro, int shortbreak, int longbreak, int interval) {
         this.pomodoro = pomodoro;
@@ -14,9 +15,8 @@ public class PomodoroTimer {
         this.longbreak = longbreak;
         this.interval = interval;
     }
-    
-    //getters e setters
 
+    //getters e setters
     public int getPomodoro() {
         return pomodoro;
     }
@@ -48,22 +48,19 @@ public class PomodoroTimer {
     public void setInterval(int interval) {
         this.interval = interval;
     }
-    
-    
-    
-    
+
     public int getSeconds(int id) {
-        switch(id){
+        switch (id) {
             case 1:
-                return this.getPomodoro()*60;
-            
+                return this.getPomodoro() * 60;
+
             case 2:
-                return this.getShortbreak()*60;
-                
+                return this.getShortbreak() * 60;
+
             case 3:
-                return this.getLongbreak()*60;
+                return this.getLongbreak() * 60;
         }
         return 0;
     }
- 
+
 }

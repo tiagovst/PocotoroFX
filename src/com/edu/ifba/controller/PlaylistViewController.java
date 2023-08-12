@@ -2,7 +2,9 @@ package com.edu.ifba.controller;
 
 import java.io.File;
 import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.media.Media;
@@ -12,7 +14,7 @@ import javafx.scene.media.MediaPlayer;
  *
  * @author Gabriel
  */
-public class PlaylistViewController {
+public class PlaylistViewController implements Initializable {
 
     //Atributos
     @FXML
@@ -32,22 +34,6 @@ public class PlaylistViewController {
     private boolean isPlaying = false;
     private Media media = new Media(new File(path + String.valueOf(this.actualSong) + ".mp3").toURI().toString());
     private MediaPlayer mediaPlayer = new MediaPlayer(media);
-
-    public Media getMedia() {
-        return media;
-    }
-
-    public void setMedia(Media media) {
-        this.media = media;
-    }
-
-    public MediaPlayer getMediaPlayer() {
-        return mediaPlayer;
-    }
-
-    public void setMediaPlayer(MediaPlayer mediaPlayer) {
-        this.mediaPlayer = mediaPlayer;
-    }
 
     //On Action Listeners
     public void onJButtonPreviousSongAction() {
@@ -86,21 +72,39 @@ public class PlaylistViewController {
         this.mediaPlayer.stop();
         this.isPlaying = false;
         this.actualSong += 1;
-        this.setMedia(new Media(new File(path + String.valueOf(this.actualSong) + ".mp3").toURI().toString()));
-        this.setMedia(media);
-        jLabelSongName.setText("song" + String.valueOf(this.actualSong));
-        playPauseSong();
-
+        if (this.actualSong > 0 && this.actualSong < 3) {
+            changeMedia(actualSong);
+            playPauseSong();
+        } else {
+            this.actualSong = 1;
+            changeMedia(actualSong);
+            playPauseSong();
+        }
     }
 
     public void previous() {
         this.mediaPlayer.stop();
         this.isPlaying = false;
         this.actualSong -= 1;
-        this.setMedia(new Media(new File(path + String.valueOf(this.actualSong) + ".mp3").toURI().toString()));
-        this.setMedia(media);
+        if (this.actualSong > 0 && this.actualSong < 3) {
+            changeMedia(actualSong);
+            playPauseSong();
+        } else {
+            this.actualSong = 1;
+            changeMedia(actualSong);
+            playPauseSong();
+        }
+    }
+    
+    public void changeMedia(int songAtTheMoment){
+        this.media = new Media(new File(path + String.valueOf(songAtTheMoment) + ".mp3").toURI().toString());
+        this.mediaPlayer = new MediaPlayer(media);
+        jLabelSongName.setText("song" + String.valueOf(songAtTheMoment));
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
         jLabelSongName.setText("song" + String.valueOf(this.actualSong));
-        playPauseSong();
     }
 
 }

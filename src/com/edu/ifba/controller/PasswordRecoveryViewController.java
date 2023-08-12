@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  * @author bia-eduao
  */
 public class PasswordRecoveryViewController {
-    
+
     @FXML
     private TextField recoveryTxtCode;
     @FXML
@@ -23,22 +23,22 @@ public class PasswordRecoveryViewController {
     private TextField recoveryTxtConfirmPassword;
     @FXML
     private Button recoveryButtonResetPassword;
-    
+
     RequestCodeViewController request;
     private int recoveryCode = request.getRecoveryCode();
-    
+
     @FXML
-    public void handleButtonResetPassword(){
-        if(Integer.parseInt(recoveryTxtCode.getText())==recoveryCode){
-            if(recoveryTxtNewPassword.getText().equals(recoveryTxtConfirmPassword.getText())){
+    public void handleButtonResetPassword() {
+        if (Integer.parseInt(recoveryTxtCode.getText()) == recoveryCode) {
+            if (recoveryTxtNewPassword.getText().equals(recoveryTxtConfirmPassword.getText())) {
                 this.request.user.setPassword(recoveryTxtNewPassword.getText());
                 this.request.userDAO.alterarSenha(this.request.user);
-                
+
                 JOptionPane.showMessageDialog(null, "Senha alterada com sucesso!");
-            }else{
+            } else {
                 JOptionPane.showMessageDialog(null, "Senhas não coincidem.");
             }
-        }else{
+        } else {
             JOptionPane.showMessageDialog(null, "Código de Recuperação incorreto.");
         }
     }

@@ -14,108 +14,108 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="960.0" prefHeight="768.0" prefWidth="1368.0" styleClass="background-color-fundo" stylesheets="@stylesheets/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.edu.ifba.controller.RegisterViewController">
-   <center>
-      <VBox alignment="CENTER" maxHeight="550.0" maxWidth="570.0" minHeight="550.0" minWidth="570.0" prefHeight="550.0" prefWidth="570.0" stylesheets="@stylesheets/style.css" BorderPane.alignment="CENTER">
-         <children>
-            <Pane maxHeight="500.0" maxWidth="530.0" prefHeight="500.0" prefWidth="530.0" stylesheets="@stylesheets/style.css">
-               <styleClass>
-                  <String fx:value="background-color-cinza-escuro" />
-                  <String fx:value="background-radius-40px" />
-               </styleClass>
-               <children>
-                  <Label alignment="TOP_LEFT" layoutX="33.0" layoutY="135.0" text="Email:" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="registerTxtEmail" alignment="TOP_LEFT" layoutX="33.0" layoutY="171.0" prefHeight="50.0" prefWidth="465.0" promptText="seuemail@exemplo.com" styleClass="background-radius-10px" stylesheets="@stylesheets/style.css">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </TextField>
-                  <Label alignment="TOP_LEFT" layoutX="33.0" layoutY="227.0" text="Senha:" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                  </Label>
-                  <PasswordField fx:id="registerPasswordTxt" alignment="TOP_LEFT" layoutX="33.0" layoutY="263.0" prefHeight="50.0" prefWidth="465.0" promptText="********" styleClass="background-radius-10px" stylesheets="@stylesheets/style.css">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </PasswordField>
-                  <Button fx:id="registerButton" alignment="CENTER" layoutX="158.0" layoutY="430.0" mnemonicParsing="false" onAction="#onRegisterButtonAction" prefHeight="45.0" prefWidth="215.0" stylesheets="@stylesheets/style.css" text="REGISTRAR" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="background-radius-10px" />
-                        <String fx:value="button-background-color" />
-                     </styleClass>
+    <center>
+        <VBox alignment="CENTER" maxHeight="550.0" maxWidth="570.0" minHeight="550.0" minWidth="570.0" prefHeight="550.0" prefWidth="570.0" stylesheets="@stylesheets/style.css" BorderPane.alignment="CENTER">
+            <children>
+                <Pane maxHeight="500.0" maxWidth="530.0" prefHeight="500.0" prefWidth="530.0" stylesheets="@stylesheets/style.css">
+                    <styleClass>
+                        <String fx:value="background-color-cinza-escuro" />
+                        <String fx:value="background-radius-40px" />
+                    </styleClass>
+                    <children>
+                        <Label alignment="TOP_LEFT" layoutX="33.0" layoutY="135.0" text="Email:" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="registerTxtEmail" alignment="TOP_LEFT" layoutX="33.0" layoutY="171.0" prefHeight="50.0" prefWidth="465.0" promptText="seuemail@exemplo.com" styleClass="background-radius-10px" stylesheets="@stylesheets/style.css">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </TextField>
+                        <Label alignment="TOP_LEFT" layoutX="33.0" layoutY="227.0" text="Senha:" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <PasswordField fx:id="registerPasswordTxt" alignment="TOP_LEFT" layoutX="33.0" layoutY="263.0" prefHeight="50.0" prefWidth="465.0" promptText="********" styleClass="background-radius-10px" stylesheets="@stylesheets/style.css">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </PasswordField>
+                        <Button fx:id="registerButton" alignment="CENTER" layoutX="158.0" layoutY="430.0" mnemonicParsing="false" onAction="#onRegisterButtonAction" prefHeight="45.0" prefWidth="215.0" stylesheets="@stylesheets/style.css" text="REGISTRAR" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                            <styleClass>
+                                <String fx:value="background-radius-10px" />
+                                <String fx:value="button-background-color" />
+                            </styleClass>
                      
-                  </Button>
-                  <Label alignment="TOP_LEFT" layoutX="33.0" layoutY="324.0" text="Confirmar Senha:" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="TOP_LEFT" layoutX="33.0" layoutY="43.0" text="Nome:" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                  </Label>
-                  <TextField fx:id="registerTxtName" alignment="TOP_LEFT" layoutX="33.0" layoutY="79.0" prefHeight="50.0" prefWidth="465.0" promptText="nome" styleClass="background-radius-10px" stylesheets="@stylesheets/style.css">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </TextField>
-                  <PasswordField fx:id="registerPasswordTxtConfirm" alignment="TOP_LEFT" layoutX="33.0" layoutY="360.0" prefHeight="50.0" prefWidth="465.0" promptText="********" styleClass="background-radius-10px" stylesheets="@stylesheets/style.css">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </PasswordField>
-               </children>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </Pane>
-         </children>
-         <styleClass>
-            <String fx:value="background-color-cinza-claro" />
-            <String fx:value="background-radius-40px" />
-         </styleClass>
-         <BorderPane.margin>
-            <Insets right="91.0" />
-         </BorderPane.margin>
-      </VBox>
-   </center>
-   <top>
-      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="BOTTOM_CENTER">
-         <image>
-            <Image url="@images/CADASTRO%20-%20def.png" />
-         </image>
-         <BorderPane.margin>
-            <Insets bottom="-60.0" top="90.0" />
-         </BorderPane.margin>
-      </ImageView>
-   </top>
-   <left>
-      <ImageView fitHeight="232.0" fitWidth="251.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="TOP_LEFT">
-         <image>
-            <Image url="@images/bolhas%201.png" />
-         </image>
-         <BorderPane.margin>
-            <Insets top="-65.0" />
-         </BorderPane.margin>
-      </ImageView>
-   </left>
-   <right>
-      <ImageView fitHeight="329.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER_LEFT">
-         <image>
-            <Image url="@images/bolhas%202.png" />
-         </image>
-         <BorderPane.margin>
-            <Insets bottom="-80.0" />
-         </BorderPane.margin>
-      </ImageView>
-   </right>
+                        </Button>
+                        <Label alignment="TOP_LEFT" layoutX="33.0" layoutY="324.0" text="Confirmar Senha:" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label alignment="TOP_LEFT" layoutX="33.0" layoutY="43.0" text="Nome:" textFill="WHITE">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="registerTxtName" alignment="TOP_LEFT" layoutX="33.0" layoutY="79.0" prefHeight="50.0" prefWidth="465.0" promptText="nome" styleClass="background-radius-10px" stylesheets="@stylesheets/style.css">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </TextField>
+                        <PasswordField fx:id="registerPasswordTxtConfirm" alignment="TOP_LEFT" layoutX="33.0" layoutY="360.0" prefHeight="50.0" prefWidth="465.0" promptText="********" styleClass="background-radius-10px" stylesheets="@stylesheets/style.css">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </PasswordField>
+                    </children>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </Pane>
+            </children>
+            <styleClass>
+                <String fx:value="background-color-cinza-claro" />
+                <String fx:value="background-radius-40px" />
+            </styleClass>
+            <BorderPane.margin>
+                <Insets right="91.0" />
+            </BorderPane.margin>
+        </VBox>
+    </center>
+    <top>
+        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="BOTTOM_CENTER">
+            <image>
+                <Image url="@images/CADASTRO%20-%20def.png" />
+            </image>
+            <BorderPane.margin>
+                <Insets bottom="-60.0" top="90.0" />
+            </BorderPane.margin>
+        </ImageView>
+    </top>
+    <left>
+        <ImageView fitHeight="232.0" fitWidth="251.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="TOP_LEFT">
+            <image>
+                <Image url="@images/bolhas%201.png" />
+            </image>
+            <BorderPane.margin>
+                <Insets top="-65.0" />
+            </BorderPane.margin>
+        </ImageView>
+    </left>
+    <right>
+        <ImageView fitHeight="329.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER_LEFT">
+            <image>
+                <Image url="@images/bolhas%202.png" />
+            </image>
+            <BorderPane.margin>
+                <Insets bottom="-80.0" />
+            </BorderPane.margin>
+        </ImageView>
+    </right>
 </BorderPane>
