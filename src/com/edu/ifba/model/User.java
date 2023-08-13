@@ -1,5 +1,7 @@
 package com.edu.ifba.model;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author joeziojr
@@ -10,6 +12,7 @@ public class User {
     private String name;
     private String email;
     private String password;
+    private ArrayList<Task> tasklist;
     // private blob image;
 
     public int getId() {
@@ -44,4 +47,12 @@ public class User {
         this.password = password;
     }
 
+    public ArrayList<Task> getTasklist() {
+        return tasklist;
+    }
+
+    public void setTasklist(ArrayList<Task> tasklist) {
+        this.tasklist = tasklist;
+    }
+    
 }

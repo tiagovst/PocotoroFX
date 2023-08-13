@@ -37,6 +37,7 @@ public class LoginViewController {
     private Button loginRegisterButton;
 
     private UserDAO userDao = new UserDAO();
+    protected User usuarioLogado;
 
     //Método que  verifica a existência de uma conta, verificando o email
     public boolean fazerLogin() throws IOException {
@@ -45,6 +46,7 @@ public class LoginViewController {
                     loginEmailTxt.getText(), loginPasswordField.getText());
             if (us.getId() > 0) {
                 openMain();
+                usuarioLogado = us;
                 return true;
             }
             if (us.getId() == 0) {
