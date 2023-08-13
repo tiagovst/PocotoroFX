@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="960.0" prefHeight="482.0" prefWidth="1046.0" styleClass="background-color-fundo" stylesheets="@stylesheets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.edu.ifba.controller.ConfigController">
+   <left>
+      <ImageView fitHeight="232.0" fitWidth="251.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="TOP_LEFT">
+         <image>
+            <Image url="@images/bolhas%201.png" />
+         </image>
+         <BorderPane.margin>
+            <Insets top="-100.0" />
+         </BorderPane.margin>
+      </ImageView>
+   </left>
+   <right>
+      <ImageView fitHeight="329.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER_RIGHT">
+         <image>
+            <Image url="@images/bolhas%202.png" />
+         </image>
+      </ImageView>
+   </right>
+   <center>
+      <Pane maxHeight="-Infinity" maxWidth="570.0" prefHeight="323.0" prefWidth="570.0" stylesheets="@stylesheets/style.css" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="20.0" layoutY="22.0" prefHeight="188.0" prefWidth="530.0" stylesheets="@stylesheets/style.css">
+               <children>
+                  <GridPane alignment="CENTER_RIGHT" layoutX="58.0" layoutY="41.0" prefHeight="107.0" prefWidth="387.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="0.0" prefWidth="94.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="328.0" minWidth="10.0" prefWidth="234.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="194.0" minHeight="10.0" prefHeight="141.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" text="TÍTULO" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="taskTitleTxt" GridPane.columnIndex="1" />
+                     </children>
+                     <padding>
+                        <Insets left="30.0" />
+                     </padding>
+                  </GridPane>
+               </children>
+               <styleClass>
+                  <String fx:value="background-color-cinza-escuro" />
+                  <String fx:value="background-radius-40px" />
+               </styleClass>
+            </Pane>
+            <Button fx:id="addTaskButton" layoutX="190.0" layoutY="236.0" mnemonicParsing="false" onAction="#onAddTaskButtonAction" prefHeight="20.0" prefWidth="190.0" stylesheets="@stylesheets/style.css" text="ADICIONAR" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="background-color-cinza-escurinho" />
+                  <String fx:value="background-radius-10px" />
+               </styleClass>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets left="-91.0" />
+         </BorderPane.margin>
+         <styleClass>
+            <String fx:value="background-color-cinza-clarinho" />
+            <String fx:value="background-radius-40px" />
+         </styleClass>
+      </Pane>
+   </center>
+   <top>
+      <Label text="Adicionar Task" textFill="WHITE" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets top="40.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+</BorderPane>
