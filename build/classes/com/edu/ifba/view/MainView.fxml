@@ -119,6 +119,7 @@
                         <Insets top="10.0" />
                     </VBox.margin>
                 </HBox>
+            <Button fx:id="taskButton" mnemonicParsing="false" onAction="#onTaskButtonAction" prefHeight="67.0" prefWidth="166.0" text="ADICIONAR TASK" />
             </children>
             <BorderPane.margin>
                 <Insets left="-91.0" top="100.0" />

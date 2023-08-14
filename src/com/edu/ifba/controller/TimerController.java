@@ -51,6 +51,9 @@ public class TimerController implements Initializable {
 
     @FXML
     private Label jLabelSeconds;
+    
+    @FXML
+    private Button taskButton;
 
     int intervalLB;
 
@@ -140,6 +143,16 @@ public class TimerController implements Initializable {
         Scene newScene = new Scene(root);
         stage.setScene(newScene);
         stage.show();
+
+    }
+    
+    public void onTaskButtonAction() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/edu/ifba/view/AddTaskView.fxml"));
+        Stage stage = (Stage) taskButton.getScene().getWindow();
+        Scene newScene = new Scene(root);
+        stage.setScene(newScene);
+        //stage.centerOnScreen();
+        stage.showAndWait();
 
     }
 
@@ -283,6 +296,8 @@ public class TimerController implements Initializable {
     public static void setIsNewTimer(boolean isNewTimer) {
         TimerController.isNewTimer = isNewTimer;
     }
+    
+    
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

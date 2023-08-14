@@ -63,7 +63,16 @@
                   <String fx:value="background-radius-40px" />
                </styleClass>
             </Pane>
-            <Button fx:id="addTaskButton" layoutX="190.0" layoutY="236.0" mnemonicParsing="false" onAction="#onAddTaskButtonAction" prefHeight="20.0" prefWidth="190.0" stylesheets="@stylesheets/style.css" text="ADICIONAR" textFill="WHITE">
+            <Button fx:id="addTaskButton" layoutX="314.0" layoutY="243.0" mnemonicParsing="false" onAction="#onAddTaskButtonAction" prefHeight="20.0" prefWidth="190.0" stylesheets="@stylesheets/style.css" text="ADICIONAR" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <styleClass>
+                  <String fx:value="background-color-cinza-escurinho" />
+                  <String fx:value="background-radius-10px" />
+               </styleClass>
+            </Button>
+            <Button fx:id="cancelTaskButton" layoutX="70.0" layoutY="243.0" mnemonicParsing="false" onAction="#onCancelTaskButtonAction" prefHeight="20.0" prefWidth="190.0" stylesheets="@stylesheets/style.css" text="CANCELAR" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
