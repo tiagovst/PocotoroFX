@@ -119,7 +119,13 @@
                         <Insets top="10.0" />
                     </VBox.margin>
                 </HBox>
-            <Button fx:id="taskButton" mnemonicParsing="false" onAction="#onTaskButtonAction" prefHeight="67.0" prefWidth="166.0" text="ADICIONAR TASK" />
+            <Button fx:id="taskButton" mnemonicParsing="false" onAction="#onTaskButtonAction" prefHeight="68.0" prefWidth="300.0" style="-fx-border-width: 2px; -fx-border-style: dashed; -fx-border-color: #6d8191;" styleClass="background-color-fundo" stylesheets="@stylesheets/style.css" text="+ Add tarefa" textAlignment="CENTER" textFill="#586875">
+               <VBox.margin>
+                  <Insets left="370.0" top="120.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Button>
             </children>
             <BorderPane.margin>
                 <Insets left="-91.0" top="100.0" />
@@ -159,7 +165,11 @@
     <top>
         <ButtonBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <buttons>
-                <Button fx:id="jButtonMusic" mnemonicParsing="false" onAction="#onButtonMusicAction" text="Button" />
+                <Button fx:id="jButtonMusic" mnemonicParsing="false" onAction="#onButtonMusicAction" stylesheets="@stylesheets/style.css" text="Music">
+               <styleClass>
+                  <String fx:value="background-color-cinza-clarinho" />
+                  <String fx:value="background-radius-10px" />
+               </styleClass></Button>
                 <Button fx:id="jButtonLogin" mnemonicParsing="false" onAction="#onButtonLoginAction" stylesheets="@stylesheets/style.css" text="Login" textOverrun="CENTER_ELLIPSIS">
                     <styleClass>
                         <String fx:value="background-radius-10px" />

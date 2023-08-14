@@ -118,7 +118,7 @@ public class TimerController implements Initializable {
 
         // Cria uma nova janela para a tela de música
         Stage musicStage = new Stage();
-//        musicStage.initStyle(StageStyle.UNDECORATED);
+        musicStage.initStyle(StageStyle.UNDECORATED);
         musicStage.initModality(Modality.APPLICATION_MODAL);
         musicStage.initOwner(jButtonMusic.getScene().getWindow());
 
@@ -126,7 +126,7 @@ public class TimerController implements Initializable {
         Scene musicScene = new Scene(root);
         musicStage.setScene(musicScene);
         musicStage.showAndWait(); // Mostra a janela e aguarda até que seja fechada
-}
+    }
 
     public void onButtonLoginAction() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("/com/edu/ifba/view/LoginView.fxml"));

@@ -10,10 +10,6 @@ import javafx.scene.control.Label;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
-/**
- *
- * @author Gabriel
- */
 public class PlaylistViewController implements Initializable {
 
     //Atributos
@@ -25,10 +21,16 @@ public class PlaylistViewController implements Initializable {
 
     @FXML
     Button jButtonNextSong;
+    
+    @FXML
+    Button jButtonCloseSong;
+    
+    @FXML
+    Button jButtonMinimizeSong;
 
     @FXML
     Label jLabelSongName;
-
+    
     private String path = "src/musics/song";
     private int actualSong = 1;
     private boolean isPlaying = false;
@@ -47,6 +49,15 @@ public class PlaylistViewController implements Initializable {
     public void onJButtonPlayPauseAction() {
         this.playPauseSong();
     }
+    
+    public void onButtonCloseSongAction(){
+        
+    }
+    
+    public void onButtonMinimizeSongAction(){
+    
+    }
+    
 
     //Metodos
     public void playPauseSong() {
