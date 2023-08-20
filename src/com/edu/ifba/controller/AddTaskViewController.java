@@ -41,7 +41,7 @@ public class AddTaskViewController implements Initializable{
         
     }
     
-    public void onCancelTaskButton() throws IOException{
+    public void onCancelTaskButtonAction() throws IOException{
         cancel();
     }
     

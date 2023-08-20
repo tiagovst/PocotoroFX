@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="960.0" prefHeight="482.0" prefWidth="1046.0" styleClass="background-color-fundo" stylesheets="@stylesheets/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.edu.ifba.controller.ConfigController">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="960.0" prefHeight="482.0" prefWidth="1046.0" styleClass="background-color-fundo" stylesheets="@stylesheets/style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.edu.ifba.controller.AddTaskViewController">
    <left>
       <ImageView fitHeight="232.0" fitWidth="251.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="TOP_LEFT">
          <image>

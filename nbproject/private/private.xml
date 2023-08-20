@@ -3,10 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Tiago/Programming/NetBeansProjects/schoolProjects/PocotoroFX/src/com/edu/ifba/controller/TimerController.java</file>
-            <file>file:/E:/Tiago/Programming/NetBeansProjects/schoolProjects/PocotoroFX/src/com/edu/ifba/controller/AddTaskViewController.java</file>
-            <file>file:/E:/Tiago/Programming/NetBeansProjects/schoolProjects/PocotoroFX/src/com/edu/ifba/view/stylesheets/style.css</file>
-            <file>file:/E:/Tiago/Programming/NetBeansProjects/schoolProjects/PocotoroFX/src/com/edu/ifba/controller/PlaylistViewController.java</file>
+            <file>file:/home/dokidokiabr/NetBeansProjects/PocotoroFX/src/com/edu/ifba/controller/LoginViewController.java</file>
+            <file>file:/home/dokidokiabr/NetBeansProjects/PocotoroFX/src/com/edu/ifba/controller/AddTaskViewController.java</file>
+            <file>file:/home/dokidokiabr/NetBeansProjects/PocotoroFX/src/com/edu/ifba/model/User.java</file>
+            <file>file:/home/dokidokiabr/NetBeansProjects/PocotoroFX/src/com/edu/ifba/main/Main.java</file>
+            <file>file:/home/dokidokiabr/NetBeansProjects/PocotoroFX/src/com/edu/ifba/controller/TimerController.java</file>
         </group>
     </open-files>
 </project-private>

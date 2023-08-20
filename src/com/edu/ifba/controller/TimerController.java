@@ -147,12 +147,12 @@ public class TimerController implements Initializable {
     }
     
     public void onTaskButtonAction() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/com/edu/ifba/view/AddTaskView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/edu/ifba/view/AddTaskViewPopUp.fxml"));
         Stage stage = (Stage) taskButton.getScene().getWindow();
         Scene newScene = new Scene(root);
         stage.setScene(newScene);
         //stage.centerOnScreen();
-        stage.showAndWait();
+        stage.show();
 
     }
 
